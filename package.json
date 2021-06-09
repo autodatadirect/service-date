@@ -1,0 +1,38 @@
+{
+  "name": "@autodatadirect/service-date",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autodatadirect/service-date.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/autodatadirect/service-date/issues"
+  },
+  "homepage": "https://github.com/autodatadirect/service-date#readme",
+  "dependencies": {
+    "date-fns": "2.22.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.14.3",
+    "@babel/core": "7.14.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.14.4",
+    "@babel/preset-env": "7.14.4",
+    "@babel/runtime": "7.14.0",
+    "babel-jest": "27.0.2",
+    "jest": "27.0.4",
+    "standard": "16.0.3"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}

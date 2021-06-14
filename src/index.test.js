@@ -1,4 +1,4 @@
-import { formatServerDate, formatServerDateTime, formatDisplayDateTime, formatDisplayDate } from './dateUtils.js'
+import { formatServerDate, formatServerDateTime, formatDisplayDateTime, formatDisplayDate } from './'
 
 const isFunction = x => typeof x === 'function'
 

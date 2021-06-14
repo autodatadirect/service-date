@@ -53,6 +53,7 @@ export const formatDisplayDate = dateObj => {
 export const parseServerDate = dateString => {
   if (!dateString) return
   if (typeof dateString !== 'string') throw new Error('Input is not a string')
+  dateString = dateString.split(':')[0]
   return getUTCDate(parse(dateString, FORMAT_SERVER_DATE, new Date(0)))
 }
 
@@ -61,3 +62,5 @@ export const parseServerDateTime = dateString => {
   if (typeof dateString !== 'string') throw new Error('Input is not a string')
   return getLocalDate(parse(dateString, FORMAT_SERVER_DATETIME, new Date(0)))
 }
+
+export const convertServerDateTime = serverDate => formatDisplayDateTime(parseServerDateTime(serverDate))

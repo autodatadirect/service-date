@@ -3,7 +3,7 @@ A library to convert back and forth from the ADD server date format to the stand
 
 # Available Functions
 
-__formatServerDate__
+## formatServerDate
 Converts a Date object into a String formatted as `yyyy-MM-dd`
 
 ```
@@ -13,7 +13,7 @@ const date = formatServerDate(new Date(2021, 5, 15))
 console.log(date) // '2021-06-15'
 ```
 
-__formatServerDateTime__
+## formatServerDateTime
 Converts a Date object into a String formatted as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
 
 ```
@@ -23,7 +23,7 @@ const date = formatServerDateTime(new Date(2021, 5, 15, 9, 59, 32, 139))
 console.log(date) // '2021-06-15T09:59:32.139Z'
 ```
 
-__formatDisplayDateTime__
+## formatDisplayDateTime
 Converts a Date object into a String formatted as `M/d/yyyy h:mm a`
 
 ```
@@ -33,7 +33,7 @@ const date = formatDisplayDateTime(new Date(2021, 5, 15, 9, 59, 32, 139))
 console.log(date) // '6/15/2021 9:59 AM'
 ```
 
-__formatDisplayDate__
+## formatDisplayDate
 Converts a Date object into a String formatted as `M/d/yyyy h:mm a`
 
 ```
@@ -43,7 +43,7 @@ const date = formatDisplayDate(new Date(2021, 5, 15, 9, 59, 32, 139))
 console.log(date) // '6/15/2021'
 ```
 
-__parseServerDate__
+## parseServerDate
 Converts a String formatted as `yyyy-MM-dd` into a Date object
 
 ```
@@ -53,7 +53,7 @@ const date = parseServerDate('2021-06-15')
 console.log(date) // new Date(2021, 5, 15, 9, 59, 32, 139)
 ```
 
-__parseServerDateTime__
+## parseServerDateTime
 Converts a String formatted as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'` into a Date object
 
 ```

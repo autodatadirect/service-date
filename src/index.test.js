@@ -1,4 +1,4 @@
-import { formatServerDate, formatServerDateTime, formatDisplayDateTime, formatDisplayDate } from './'
+import { formatServerDate, formatServerDateTime, formatDisplayDateTime, formatDisplayDate, parseServerDate, parseServerDateTime } from './'
 
 const isFunction = x => typeof x === 'function'
 
@@ -21,7 +21,7 @@ describe('dateUtils', () => {
     })
   })
 
-  describe('formatServerDateTime', () => {
+  describe('formatDisplayDateTime', () => {
     it('is a function', () => {
       expect(isFunction(formatDisplayDateTime)).toBeTruthy()
     })
@@ -36,6 +36,27 @@ describe('dateUtils', () => {
     })
     it('returns 2020-11-15 when passed in new Date(2020, 10, 15)', () => {
       expect(formatServerDate(new Date(2020, 10, 15))).toEqual('2020-11-15')
+    })
+  })
+
+  describe('parseServerDate', () => {
+    it('is a function', () => {
+      expect(isFunction(parseServerDate)).toBeTruthy()
+    })
+    it('returns new Date(2020, 10, 15, 5) when passed in 2020-11-15', () => {
+      expect(parseServerDate('2020-11-15')).toEqual(new Date(2020, 10, 15, 5))
+    })
+    it('ignores timezone', () => {
+      expect(parseServerDate('2020-11-15:New_York')).toEqual(new Date(2020, 10, 15, 5))
+    })
+  })
+
+  describe('parseServerDateTime', () => {
+    it('is a function', () => {
+      expect(isFunction(parseServerDateTime)).toBeTruthy()
+    })
+    it('returns new Date(2020, 10, 15, 11, 34, 52) when passed in 2020-11-15T16:34:52.000Z', () => {
+      expect(parseServerDateTime('2020-11-15T16:34:52.000Z')).toEqual(new Date(2020, 10, 15, 11, 34, 52))
     })
   })
 })

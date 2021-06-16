@@ -18,7 +18,7 @@ const getUTCDate = date => {
   )
 }
 
-export const getLocalDate = date => {
+const getLocalDate = date => {
   return new Date(Date.UTC(
     date.getFullYear(),
     date.getMonth(),

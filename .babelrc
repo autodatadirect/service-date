@@ -6,5 +6,8 @@
   "minified": true,
   "plugins": [
     "@babel/plugin-proposal-object-rest-spread"
+  ],
+  "ignore": [
+    "**/*.test.js"
   ]
 }

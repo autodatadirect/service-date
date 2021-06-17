@@ -4,19 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel ./src -d ./dist",
+    "dev": "babel -w ./src -d ./dist",
+    "prepare": "npm run build",
+    "lint": "standard \"./src/**/*.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/autodatadirect/service-date.git"
   },
-  "author": "",
+  "author": "Auto Data Direct, Inc.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/autodatadirect/service-date/issues"
   },
   "homepage": "https://github.com/autodatadirect/service-date#readme",
-  "dependencies": {
+  "peerDependencies": {
     "date-fns": "2.22.1"
   },
   "devDependencies": {

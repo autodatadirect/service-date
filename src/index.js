@@ -64,3 +64,5 @@ export const parseServerDateTime = dateString => {
 }
 
 export const convertServerDateTime = serverDate => formatDisplayDateTime(parseServerDateTime(serverDate))
+
+export const convertServerDate = serverDate => formatDisplayDate(parseServerDate(serverDate))

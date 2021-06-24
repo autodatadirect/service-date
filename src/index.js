@@ -6,7 +6,7 @@ export const FORMAT_SERVER_DATE = 'yyyy-MM-dd'
 export const FORMAT_DISPLAY_DATE = 'MM/dd/yyyy'
 export const FORMAT_DISPLAY_DATETIME = 'MM/dd/yyyy h:mm a'
 
-const getUTCDate = date => {
+export const getUTCDate = date => {
   return new Date(
     date.getUTCFullYear(),
     date.getUTCMonth(),
@@ -18,7 +18,7 @@ const getUTCDate = date => {
   )
 }
 
-const getLocalDate = date => {
+export const getLocalDate = date => {
   return new Date(Date.UTC(
     date.getFullYear(),
     date.getMonth(),
@@ -32,7 +32,7 @@ const getLocalDate = date => {
 
 export const formatServerDate = dateObj => {
   if (typeof dateObj === 'string') throw new Error('Input is a string, expected a Date Object')
-  return isValid(dateObj) ? format(getUTCDate(dateObj), FORMAT_SERVER_DATE) : undefined
+  return isValid(dateObj) ? format(dateObj, FORMAT_SERVER_DATE) : undefined
 }
 
 export const formatServerDateTime = dateObj => {
@@ -42,16 +42,16 @@ export const formatServerDateTime = dateObj => {
 
 export const formatDisplayDateTime = dateObj => {
   if (typeof dateObj === 'string') throw new Error('Input is a string, expected a Date Object')
-  return isValid(dateObj) ? format(getUTCDate(dateObj), FORMAT_DISPLAY_DATETIME) : ''
+  return isValid(dateObj) ? format(dateObj, FORMAT_DISPLAY_DATETIME) : ''
 }
 
 export const formatDisplayDate = dateObj => {
   if (typeof dateObj === 'string') throw new Error('Input is a string, expected a Date Object')
-  return isValid(dateObj) ? format(getUTCDate(dateObj), FORMAT_DISPLAY_DATE) : ''
+  return isValid(dateObj) ? format(dateObj, FORMAT_DISPLAY_DATE) : ''
 }
 
 export const parseServerDate = dateString => {
-  if (!dateString) return 
+  if (!dateString) return
   if (typeof dateString !== 'string') throw new Error('Input is not a string')
   dateString = dateString.split(':')[0]
   const date = parse(dateString, FORMAT_SERVER_DATE, new Date(0))
@@ -59,7 +59,7 @@ export const parseServerDate = dateString => {
 }
 
 export const parseServerDateTime = dateString => {
-  if (!dateString) return 
+  if (!dateString) return
   if (typeof dateString !== 'string') throw new Error('Input is not a string')
   const date = parse(dateString, FORMAT_SERVER_DATETIME, new Date(0))
   return isValid(date) ? getLocalDate(date) : undefined

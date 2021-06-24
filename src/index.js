@@ -6,7 +6,7 @@ export const FORMAT_SERVER_DATE = 'yyyy-MM-dd'
 export const FORMAT_DISPLAY_DATE = 'MM/dd/yyyy'
 export const FORMAT_DISPLAY_DATETIME = 'MM/dd/yyyy h:mm a'
 
-export const getUTCDate = date => {
+const getUTCDate = date => {
   return new Date(
     date.getUTCFullYear(),
     date.getUTCMonth(),
@@ -18,7 +18,7 @@ export const getUTCDate = date => {
   )
 }
 
-export const getLocalDate = date => {
+const getLocalDate = date => {
   return new Date(Date.UTC(
     date.getFullYear(),
     date.getMonth(),

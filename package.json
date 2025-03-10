@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/autodatadirect/service-date#readme",
   "peerDependencies": {
-    "date-fns": "^2.29.3"
+    "date-fns": "^4.1.0"
   },
   "devDependencies": {
     "@babel/cli": "7.14.3",
